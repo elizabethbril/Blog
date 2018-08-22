@@ -1,0 +1,48 @@
+﻿
+@{
+    ViewBag.Title = "Post";
+}
+
+<div class="container col-lg-push-4">
+    <h2>Adding new post</h2>
+    <div class="form-group">
+        <label for="name">Name of new post</label>
+        <input type="text" class="form-control" id="name" placeholder="Name" name="name">
+        <label for="type">Title</label>
+        <input type="text" class="form-control" id="title" placeholder="Title" name="title">
+        <label for="country">Content</label>
+        <input type="text" class="form-control" id="content" placeholder="Content" name="content">
+        <label for="city">Tag</label>
+        <input type="text" class="form-control" id="tag" placeholder="Tag" name="tag">
+        <label for="description">Category</label>
+        <input type="text" class="form-control" id="category" placeholder="Category" name="category">
+    </div>
+    <button type="submit" class="btn btn-default" onclick="AddPost()">Submit</button>
+</div>
+@section scripts{
+    <script type="text/javascript">
+
+        function AddPost() {
+            var Tour = {
+                Name: $('#name').val(),
+                Title: $('#title').val(),
+                Content: $('#content').val(),
+                Tag: $('#tag').val(),
+                Category: $('#category').val(),
+            }
+            $.ajax({
+                url: '/api/tour/',
+                type: 'POST',
+                dataType: 'JSON',
+                data: JSON.stringify(Tour),
+                contentType: "application/json; charset=utf-8",
+                success: function (data) {
+                    alert("Success")
+                },
+                error: function (error) {
+                    alert(error.responseText);
+                }
+            });
+        }
+    </script>
+}

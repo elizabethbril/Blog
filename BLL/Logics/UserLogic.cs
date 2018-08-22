@@ -36,8 +36,7 @@ namespace BLL.Logics
                 cfg.CreateMap<Category, CategoryDTO>();
                 cfg.CreateMap<CommentsDTO, Comments>();
                 cfg.CreateMap<Comments, CommentsDTO>();
-                cfg.CreateMap<ImageDTO, Image>();
-                cfg.CreateMap<Image, ImageDTO>();
+                
 
             }).CreateMapper();
             this.UoW = UoW;
@@ -66,8 +65,7 @@ namespace BLL.Logics
                 cfg.CreateMap<Category, CategoryDTO>();
                 cfg.CreateMap<CommentsDTO, Comments>();
                 cfg.CreateMap<Comments, CommentsDTO>();
-                cfg.CreateMap<ImageDTO, Image>();
-                cfg.CreateMap<Image, ImageDTO>();
+                
             }).CreateMapper();
             PostToDTO = new MapperConfiguration(cfg =>
             {
@@ -85,7 +83,7 @@ namespace BLL.Logics
 
         public IEnumerable<UserDTO> GetAllUsers()
         {
-            //UoW.DeleteDB();
+            
             return UserLogicMapper.Map<IEnumerable<User>, List<UserDTO>>(UoW.Users.GetAll());
         }
        

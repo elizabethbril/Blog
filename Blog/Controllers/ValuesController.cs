@@ -7,6 +7,7 @@ using System.Web.Http;
 
 namespace Blog.Controllers
 {
+    [Authorize]
     public class ValuesController : ApiController//реализует функционал веб апи
     {
         // GET api/values

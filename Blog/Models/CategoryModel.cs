@@ -5,13 +5,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DAL.Entities
+namespace Blog.Models
 {
-   public class Category
+    public class CategoryModel
     {
         public int Id { get; set; }
+        public int PostId { get; set; }
         public string CategoryName { get; set; }
         SqlDateTime Create_time = DateTime.Now;
-        public virtual Post Post { get; set; }
+        public virtual PostModel Post { get; set; }
     }
 }

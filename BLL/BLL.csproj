@@ -52,13 +52,12 @@
   <ItemGroup>
     <Compile Include="DTOs\CategoryDTO.cs" />
     <Compile Include="DTOs\CommentsDTO.cs" />
-    <Compile Include="DTOs\ImageDTO.cs" />
     <Compile Include="DTOs\PageDTO.cs" />
     <Compile Include="DTOs\PostDTO.cs" />
     <Compile Include="DTOs\UserDTO.cs" />
-    <Compile Include="Interfaces\IPageLogic.cs" />
-    <Compile Include="Interfaces\IPostLogic.cs" />
-    <Compile Include="Interfaces\IUserLogic.cs" />
+    <Compile Include="DTOs\Interfaces\IPageLogic.cs" />
+    <Compile Include="DTOs\Interfaces\IPostLogic.cs" />
+    <Compile Include="DTOs\Interfaces\IUserLogic.cs" />
     <Compile Include="Logics\PageLogic.cs" />
     <Compile Include="Logics\PostLogic.cs" />
     <Compile Include="Logics\UserLogic.cs" />

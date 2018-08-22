@@ -20,7 +20,16 @@ namespace DAL.Entities
         public string Password { get; set; }
         public virtual List<Post> Posts { get; set; }
         public virtual List<Comments> Comments { get; set; }
-       
+
+        public User() { }
+        public User(string Name, UserType UserType, string Surname, string Login, string Password)
+        {
+            this.Name = Name;
+            this.UserType = UserType;
+            this.Surname = Surname;
+            this.Login = Login;
+            this.Password = Password;
+        }
 
     }
 }

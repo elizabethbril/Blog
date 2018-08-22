@@ -14,5 +14,26 @@ namespace Blog.Controllers
 
             return View();
         }
+        public ActionResult Posts()
+        {
+            ViewBag.Title = "Adding Post";
+
+            return View();
+        }
+
+        public ActionResult Pages()
+        {
+            ViewBag.Title = "Adding Pages";
+
+            return View();
+        }
+
+        public ActionResult Users()
+        {
+            ViewBag.Title = "Registering User";
+
+            return View();
+        }
+
     }
 }

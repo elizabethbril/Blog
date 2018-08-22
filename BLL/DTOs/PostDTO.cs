@@ -14,11 +14,9 @@ namespace BLL.DTOs
             this.Title = Title;
             this.Content = Content;
             this.Tags = Tags;
-            this.CategoryName = CategoryName;
-           // this.Categories = new List<CategoryDTO>();
-
-
+            this.CategoryName = CategoryName;        
         }
+
         public int Id { get; set; }
         public string Title { get; set; }
         public string Content { get; set; }
@@ -30,8 +28,6 @@ namespace BLL.DTOs
         public virtual List<CommentsDTO> Comments { get; set; }
         public virtual List<CategoryDTO> Categories { get; set; }
         public virtual UserDTO UserDetails { get; set; }
-        //public virtual CategoryDTO Category { get; set; }
-        //public virtual CommentsDTO Comments { get; set; }
         public virtual IEnumerable<CategoryDTO> CategoryDetails { get; set; }
     }
 }

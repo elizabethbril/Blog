@@ -17,8 +17,7 @@ namespace BLL.DTOs
         }
         public int Id { get; set; }
         public string Comment_Content { get; set; }
-        public DateTime Create_time { get; set; }        
-        //public int UserId { get; set; }
+        public DateTime Create_time { get; set; }                
         public int PostId { get; set; }
         public bool Publish { get; set; }
         public virtual PostDTO Post { get; set; }

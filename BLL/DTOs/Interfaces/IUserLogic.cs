@@ -17,7 +17,7 @@ namespace BLL.Interfaces
         UserDTO Login(string Login, string Password);
            
         void AddComment(int UserId, int PostId, CommentsDTO comment);
-        //void AddPost(int UserId, int PostId, PostDTO post);
+        
         
     }
 }

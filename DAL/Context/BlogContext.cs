@@ -19,46 +19,12 @@ namespace DAL.Context
         public DbSet<Category> Categories { get; set; }
         public DbSet<Comments> Comments { get; set; }     
         public DbSet<Page> Pages { get; set; }       
-        public DbSet<Image> Images { get; set; }
+        
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Conventions.Remove<ManyToManyCascadeDeleteConvention>();
-            modelBuilder.Conventions.Remove<OneToManyCascadeDeleteConvention>();
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            //  modelBuilder.Entity<User>()
-            //.HasMany(r => r.Rooms)
-            //.WithRequired(h => h.Hotel)
-            //.HasForeignKey(h => h.HotelId)
-            //.WillCascadeOnDelete();
-            //modelBuilder.Ignore<Comments>();
-            //modelBuilder.Entity<Comments>().ToTable("User");
-            //base.OnModelCreating(modelBuilder);
+            modelBuilder.Conventions.Remove<OneToManyCascadeDeleteConvention>();            
         }
-
-
     }
 }
-
-
-
-
-
-
-
-//protected override void OnModelCreating(DbModelBuilder modelBuilder)
-//{
-//   // modelBuilder.Entity<Post>().ToTable("Posts");
-//    base.OnModelCreating(modelBuilder);
-//    // modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
-//}

@@ -72,16 +72,16 @@ namespace BLL.Logics
             UoW.Post.Modify(post.Id, post);
         }
 
-        //public void AddCategory(int PostId, CategoryDTO NewCategory)
-        //{
-        //    if (UserLogic.CurrentUser == null || UserLogic.CurrentUser.UserType != DTOs.UserType.Manager)
-        //        throw new Exception("Function availible only for managers");
-        //    Post post = UoW.Post.GetAll(x => x.Id == PostId, x => x.CategoryDetails).FirstOrDefault();
-        //    Category category = PostLogicMapper.Map<CategoryDTO, Category>(NewCategory);
-        //    category.Post = post;
-        //    post.CategoryDetails.Add(category);
-        //    UoW.Post.Modify(post.Id, post);
-        //}
+        public void AddCategory(int PostId, CategoryDTO NewCategory)
+        {
+            if (UserLogic.CurrentUser == null || UserLogic.CurrentUser.UserType != DTOs.UserType.Manager)
+                throw new Exception("Function availible only for managers");
+            Post post = UoW.Post.GetAll(x => x.Id == PostId, x => x.CategoryDetails).FirstOrDefault();
+            Category category = PostLogicMapper.Map<CategoryDTO, Category>(NewCategory);
+            category.Post = post;
+            post.CategoryDetails.Add(category);
+            UoW.Post.Modify(post.Id, post);
+        }
         public void EditPost(int Id, PostDTO Post)
         {
             if (UserLogic.CurrentUser == null || UserLogic.CurrentUser.UserType != DTOs.UserType.Manager)
@@ -105,18 +105,6 @@ namespace BLL.Logics
         {
             return PostLogicMapper.Map<IEnumerable<Post>, List<PostDTO>>(UoW.Post.GetAll(t => t.CategoryName == SearchCategory));
         }
-
-
-        //public void AddImage(int PostId, ImageDTO NewImage)
-        //{
-        //    if (UserLogic.CurrentUser == null || UserLogic.CurrentUser.UserType != DTOs.UserType.Manager)
-        //        throw new Exception("Function availible only for managers");
-        //    Post post = UoW.Post.GetAll(x => x.Id == PostId, x => x.Images).All();            
-        //    Category category = PostLogicMapper.Map<CategoryDTO, Category>(NewCategory);
-        //    category.Post = post;
-        //    post.CategoryDetails.Add(category);
-        //    UoW.Post.Modify(post.Id, post);
-        //}
         
     }
 }

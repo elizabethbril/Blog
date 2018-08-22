@@ -12,7 +12,6 @@ namespace DAL.Interfaces
     {
         IRepository<Category> Categories { get; }
         IRepository<Comments> Comments { get; }
-        IRepository<Image> Images { get; }
         IRepository<Page> Pages { get; }
         IRepository<Post> Post { get; }
         IRepository<User> Users { get; }

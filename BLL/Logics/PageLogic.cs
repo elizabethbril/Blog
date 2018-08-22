@@ -38,7 +38,7 @@ namespace BLL.Logics
                 cfg.CreateMap<PageDTO, Page>();
                 cfg.CreateMap<Page, PageDTO>();
                 cfg.CreateMap<Post, PostDTO>();
-                cfg.CreateMap<PostDTO, PostDTO>();
+                cfg.CreateMap<PostDTO, Post>();
             }).CreateMapper();
             UoW = LogicDependencyResolver.ResolveUoW();
         }

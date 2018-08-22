@@ -1,0 +1,58 @@
+﻿@{
+    ViewBag.Title = "Users";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="container col-lg-push-4">
+    <h2>Registering new user</h2>
+    <div class="form-group">
+        <label for="name">Name of new user</label>
+        <input type="text" class="form-control" id="name" placeholder="Name" name="name">
+        <label for="surname">Surname of new user</label>
+        <input type="text" class="form-control" id="surname" placeholder="Surname" name="surname">
+        <label for="login">Login of new user</label>
+        <input type="text" class="form-control" id="login" placeholder="Login" name="login">
+        <label for="password">Password of new user</label>
+        <input type="text" class="form-control" id="password" placeholder="Password" name="password">
+        <label for="type">Type of new user</label>
+        <input type="text" class="form-control" id="type" placeholder="Administrator/Manager/User" name="type">
+    </div>
+    <button type="submit" class="btn btn-default" onclick="AddUser()">Submit</button>
+</div>
+@section scripts{
+    <script type="text/javascript">
+
+    function AddUser() {
+        var User = {
+            UserType: $('#type').val(),
+            Name: $('#name').val(),
+            Surname: $('#surname').val(),
+            Login: $('#login').val(),
+            Password: $('#password').val()
+        }
+        if (User.Name.length < 3)
+            alert('Name must have at least 3 symbols')
+        else if (User.Surname.length < 3)
+            alert('Surname must have at least 3 symbols')
+        else if (User.Login.length < 3)
+            alert('Login must have at least 3 symbols')
+        else if (User.Password.length < 3)
+            alert('Password must have at least 3 symbols')
+        else if (User.UserType != "Administrator" && User.UserType != "Manager" && User.UserType != "User")
+            alert('Write one of 3 availible types')
+        else
+            $.ajax({
+                url: '/api/user/',
+                type: 'POST',
+                dataType: 'JSON',
+                data: JSON.stringify(User),
+                contentType: "application/json; charset=utf-8",
+                success: function (data) {
+                    alert("Success")
+                },
+                error: function (error) {
+                    alert(error.responseText);
+                }
+            });
+    }
+    </script>
+}

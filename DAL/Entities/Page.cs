@@ -18,9 +18,14 @@ namespace DAL.Entities
         [Required(ErrorMessage = "Content is required")]
         public string PagesContent { get; set; }
         SqlDateTime Create_time = DateTime.Now;
-        //public DateTime Create_Time { get; set; }
-        //public DateTime Update_Time { get; set; }
-
+        
         public virtual User UserDetail { get; set; }
+
+        public Page() { }
+        public Page(string Title, string PagesContent)
+        {
+            this.Title = Title;
+            this.PagesContent = PagesContent;
+        }
     }
 }

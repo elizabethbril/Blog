@@ -13,15 +13,20 @@ namespace DAL.Entities
         public string Title { get; set; }
         public string Content { get; set; }
         SqlDateTime Create_time = DateTime.Now;
-        //public DateTime CreateTime { get; set; }
-        //public int UserId { get; set; }
         public string Tags { get; set; }
         public string CategoryName { get; set; }
-        //public int Frequence { get; set; }
         public virtual User UserDetails { get; set; }
-        //public string CategoryName { get; set; }
-        //public virtual List<Image> Images { get; set; }
         public virtual List<Comments> Comments { get; set; }
         public virtual List<Category> CategoryDetails { get; set; }
+
+        public Post(string Title, string Content, string Tags, string CategoryName)
+        {
+            this.Title = Title;
+            this.Content = Content;
+            this.Tags = Tags;
+            this.CategoryName = CategoryName;
+        }
+
+        public Post() { }
     }
 }
